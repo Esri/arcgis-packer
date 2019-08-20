@@ -1,0 +1,76 @@
+{
+    "variables": {
+        "user_client_id": "",
+        "user_client_secret": "",
+        "user_tenant_id": "",
+        "user_subscription_id": "",
+        "Azure_ResourceGroupName":"",
+        "Azure_ImageName":"",
+        "Azure_Location":"",
+        "Install_Config_Source_File_Path":"",
+        "Install_Config_Destination_File_Path":"C:\\ArcGIS\\Deployment\\InstallConfiguration.json",
+        "ArcGIS_Module_Zip_Source_File_Path":"",
+        "ArcGIS_Module_Zip_Destination_Path":"C:\\ArcGIS\\Deployment\\ArcGIS.zip",
+        "Use_Azure_Files": "",
+        "Azure_Storage_Acc_Key":"",
+        "Azure_Storage_Acc":"",
+        "Azure_File_Share_Name":"",
+        "Azure_File_Share_Enpoint_Suffix":"core.windows.net",
+        "Azure_ImagePrefix":"",
+        "Azure_StorageAccountName":"",
+        "Azure_StorageContainerName":""
+    },
+    "builders": [{
+        "type": "azure-arm",
+        "client_id":"{{user `user_client_id`}}",
+        "client_secret":"{{user `user_client_secret`}}",
+        "tenant_id": "{{user `user_tenant_id`}}",
+        "subscription_id": "{{user `user_subscription_id`}}",
+        
+        "resource_group_name":"{{user `Azure_ResourceGroupName`}}",
+        "storage_account":"{{user `Azure_StorageAccountName`}}",
+        "capture_container_name":"{{user `Azure_StorageContainerName`}}",
+        "capture_name_prefix":"{{user `Azure_ImagePrefix`}}",
+
+        "os_type": "Windows",
+        "image_publisher": "MicrosoftWindowsServer",
+        "image_offer": "WindowsServer",
+        "image_sku": "2019-Datacenter",
+
+        "communicator": "winrm",
+        "winrm_use_ssl": true,
+        "winrm_insecure": true,
+        "winrm_timeout": "12h",
+        "winrm_username": "packer",
+        "winrm_password":"ArcGIS2019#",
+        
+        "location": "{{user `Azure_Location`}}",
+        "temp_compute_name": "buildvm",
+        "vm_size": "Standard_DS2_v2",
+        "os_disk_size_gb": 128
+    }],
+    "provisioners": [
+        {
+            "type": "file",
+            "source":"{{user `Install_Config_Source_File_Path`}}",
+            "destination": "{{user `Install_Config_Destination_File_Path`}}"
+        },
+        {
+            "type": "file",
+            "source":"{{user `ArcGIS_Module_Zip_Source_File_Path`}}",
+            "destination": "{{user `ArcGIS_Module_Zip_Destination_Path`}}"
+        },
+        {
+            "type": "powershell",
+            "script": "{{template_dir}}\\BuildScript.ps1",
+            "environment_vars": [
+                "Use_Azure_Files={{user `Use_Azure_Files`}}",
+                "Azure_Storage_Acc_Key={{user `Azure_Storage_Acc_Key`}}",
+                "Azure_Storage_Acc={{user `Azure_Storage_Acc`}}",
+                "AFS_Endpoint=\\\\{{user `Azure_Storage_Acc`}}.file.{{user `Azure_File_Share_Enpoint_Suffix`}}\\{{user `Azure_File_Share_Name`}}",
+                "ArcGIS_Module_Zip_Path={{user `ArcGIS_Module_Zip_Destination_Path`}}",
+                "Install_Config_File_Path={{user `Install_Config_Destination_File_Path`}}"
+            ]
+        }
+    ]
+  }

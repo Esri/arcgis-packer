@@ -1,0 +1,113 @@
+{
+  "WindowsFeatures": [
+    "Web-Server",
+	  "Web-Mgmt-Console"
+  ],
+  "Installers": [
+    {
+      "Name": "ArcGIS for Server",
+      "SourcePath": "C:\\Setups\\ArcGIS_Server_Windows_1071_169677.exe",
+      "RemotePath":"ArcGIS_Server_Windows_1071_169677.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Server\\installer.exe",
+      "InstallDir": "$env:SystemDrive\\arcgis",
+      "Arguments": "/qn InstallDir=\"$env:SystemDrive\\ArcGIS\\Server\" INSTALLDIR1=$env:SystemDrive\\Python27 ",
+      "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\Server",
+      "ExtractedSetupRelativePath": "ArcGISServer*/Setup.exe",
+      "IsMsi": false,
+      "ProductId": "08E03E6F-95D3-4D33-A171-E0DC996E08E3"
+    },
+	  {
+       "Name": "Portal for ArcGIS",
+       "SourcePath": "C:\\Setups\\Portal_for_ArcGIS_Windows_1071_169688.exe",
+       "RemotePath":"Portal_for_ArcGIS_Windows_1071_169688.exe",
+       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Portal\\installer.exe",
+       "InstallDir": "$env:SystemDrive\\PortalForArcGIS",
+       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Portal\" CONTENTDIR=$env:SystemDrive\\portalforarcgis\\content",
+       "PathChecked": "$env:SystemDrive\\PortalForArcGIS",
+       "ExtractedSetupRelativePath": "PortalForArcGIS*/Setup.exe",
+       "IsMsi": false,
+       "ProductId": "7FDEEE00-6641-4E27-A54E-82ACCCE14D00"
+    },
+	  {
+       "Name": "Web Styles",
+       "SourcePath": "C:\\Setups\\ArcGIS_Web_Styles_Windows_1071_170272.exe",
+       "RemotePath":"ArcGIS_Web_Styles_Windows_1071_170272.exe",
+       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebStyles\\installer.exe",
+       "InstallDir": "",
+       "Arguments": "/qb",
+       "PathChecked": "$env:SystemDrive\\WebStyles",
+       "ExtractedSetupRelativePath": "WebStyles*/Setup.exe",
+       "IsMsi": false,
+       "ProductId": "B2E42A8D-1EE9-4610-9932-D0FCFD06D2AF"
+    },
+	  {
+       "Name": "DataStore",
+       "SourcePath": "C:\\Setups\\ArcGIS_DataStore_Windows_1071_169689.exe",
+       "RemotePath":"ArcGIS_DataStore_Windows_1071_169689.exe",
+       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\DataStore\\installer.exe",
+       "InstallDir": "$env:SystemDrive\\arcgisdatastore",
+       "Arguments": "/qb InstallDir=\"$env:SystemDrive\\ArcGIS\\DataStore\" ",
+       "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\DataStore",
+       "ExtractedSetupRelativePath": "ArcGISDataStore*/Setup.exe",
+       "IsMsi": false,
+       "ProductId": "112E5FD0-9DD2-45DA-ACD5-A21AA45F67E2"
+     },
+     {
+       "Name": "GeoEvent",
+       "SourcePath": "C:\\Setups\\ArcGIS_GeoEvent_Server_1071_169716.exe",
+       "RemotePath":"ArcGIS_GeoEvent_Server_1071_169716.exe",
+       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\GeoEvent\\installer.exe",
+       "InstallDir": "$env:SystemDrive\\ArcGIS\\GeoEvent",
+       "Arguments": "/qb ",
+       "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\GeoEvent",
+       "ExtractedSetupRelativePath": "GeoEvent*/Setup.exe",
+       "IsMsi": false,
+       "ProductId": "3AE4EE62-B5ED-45CB-8917-F761B9335F33"
+    },
+    {
+      "Name": "Notebook Server",
+      "SourcePath": "C:\\Setups\\ArcGIS_Notebook_Server_1071_169734.exe",
+      "RemotePath":"ArcGIS_Notebook_Server_1071_169734.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\NotebookServer\\installer.exe",
+      "InstallDir": "$env:SystemDrive\\arcgis",
+      "Arguments": "/qb InstallDir=\"$env:SystemDrive\\ArcGIS\\NotebookServer\" ",
+      "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\NotebookServer",
+      "ExtractedSetupRelativePath": "NotebookServer*/Setup.exe",
+      "IsMsi": false,
+      "ProductId": "F6DF77B9-F35E-4877-A7B1-63E1918B4E19"
+    },
+    {
+      "Name": "IIS URL Rewrite Module 2",
+      "SourcePath": "C:\\Setups\\rewrite_amd64.msi",
+      "RemotePath":"rewrite_amd64.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\UrlRewrite\\rewrite_amd64.msi",
+      "Arguments": " /quiet",
+      "PathChecked": "$env:SystemRoot\\Program Files\\IIS\\Webfarm framework\\license_url.rtf",
+      "ExtractedSetupRelativePath": "rewrite_amd64.msi",
+      "IsMsi": true,
+      "ProductId": "08F0318A-D113-4CF0-993E-50F191D397AD"
+    },
+    {
+      "Name": "Microsoft Application Request Routing 3.0",
+      "SourcePath": "C:\\Setups\\requestRouter_amd64.msi",
+      "RemotePath":"requestRouter_amd64.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\ARR\\requestRouter_amd64.msi",
+      "Arguments": " /quiet",
+      "PathChecked": "$env:SystemRoot\\Program Files\\IIS\\Application Request Routing\\license.rtf",
+      "ExtractedSetupRelativePath": "requestRouter_amd64.msi",
+      "IsMsi": true,
+      "ProductId": "279B4CB0-A213-4F94-B224-19D6F5C59942"
+    },
+    {
+      "Name": "Microsoft SQL Server 2012 Native Client",
+      "SourcePath": "C:\\Setups\\sqlncli.msi",
+      "RemotePath":"sqlncli.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient\\sqlncli.msi",
+      "Arguments": "/qn IACCEPTSQLNCLILICENSETERMS=YES /quiet",
+      "PathChecked": "$env:SystemRoot\\System32\\sqlncli11.dll",
+      "ExtractedSetupRelativePath": "sqlncli.msi",
+      "IsMsi": true,
+      "ProductId": "B9274744-8BAE-4874-8E59-2610919CD419"
+    }
+  ]
+}

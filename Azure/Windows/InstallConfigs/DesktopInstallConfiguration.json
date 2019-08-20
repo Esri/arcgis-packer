@@ -1,0 +1,43 @@
+{
+  "WindowsFeatures": [
+
+  ],
+  "Installers": [
+    {
+      "Name": "ArcGIS Desktop",
+      "SourcePath": "C:\\Setups\\ArcGIS_Desktop_1071_169506.exe",
+      "RemotePath":"ArcGIS_Desktop_1071_169506.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Desktop\\installer.exe",
+      "InstallDir": "$env:SystemDrive\\Desktop",
+      "Arguments": "/qb ADDLOCAL=ALL INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Desktop\" INSTALLDIR1=\"$env:SystemDrive\\python27\" ESRI_LICENSE_HOST=\"$env:ComputerName\" SOFTWARE_CLASS=\"Editor\" SEAT_PREFERENCE=\"Fixed\" DESKTOP_CONFIG=\"TRUE\" MODIFYFLEXDACL=\"TRUE\"",
+      "PathChecked": "$env:SystemDrive\\ArcGIS\\Desktop",
+      "ExtractedSetupRelativePath": "ArcGISDesktop*/Setup.exe",
+      "IsMsi": false,
+      "ProductId": "69262D87-3697-492B-ABED-765DDC15118B"
+    },
+	{
+      "Name": "ArcGIS Pro",
+      "SourcePath": "C:\\Setups\\ArcGISPro_23_167023.exe",
+      "RemotePath":"ArcGISPro_23_167023.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\installer.exe",
+      "InstallDir": "$env:SystemDrive\\Pro",
+      "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Pro\" ALLUSERS=1 /qb ",
+      "PathChecked": "$env:SystemDrive\\ArcGIS\\Pro",
+      "ExtractedSetupRelativePath": "ArcGISPro*/ArcGISPro.msi",
+      "IsMsi": true,
+      "ProductId": "9CB8A8C5-202D-4580-AF55-E09803BA1959"
+    },
+	{
+      "Name": "ArcGIS License Manager",
+      "SourcePath": "C:\\Setups\\ArcGIS_License_Manager_Windows_2019_0_169344.exe",
+      "RemotePath":"ArcGIS_License_Manager_Windows_2019_0_169344.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\installer.exe",
+      "InstallDir": "$env:SystemDrive\\ArcGIS\\LicenseManager",
+      "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\LicenseManager\" /qb ",
+      "PathChecked": "$env:SystemDrive\\ArcGIS\\Pro",
+      "ExtractedSetupRelativePath": "LicenseManager*/Setup.exe",
+      "IsMsi": false,
+      "ProductId": "CFF43ACB-9B0C-4725-B489-7F969F5B90AB"
+    }
+  ]
+}
