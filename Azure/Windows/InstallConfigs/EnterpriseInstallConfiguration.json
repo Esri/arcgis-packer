@@ -6,75 +6,93 @@
   "Installers": [
     {
       "Name": "ArcGIS for Server",
-      "SourcePath": "C:\\Setups\\ArcGIS_Server_Windows_1071_169677.exe",
-      "RemotePath":"ArcGIS_Server_Windows_1071_169677.exe",
+      "SourcePath": "C:\\Setups\\ArcGIS_Server_Windows_108_172859.exe",
+      "RemotePath":"ArcGIS_Server_Windows_108_172859.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Server\\installer.exe",
       "InstallDir": "$env:SystemDrive\\arcgis",
       "Arguments": "/qn InstallDir=\"$env:SystemDrive\\ArcGIS\\Server\" INSTALLDIR1=$env:SystemDrive\\Python27 ",
       "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\Server",
       "ExtractedSetupRelativePath": "ArcGISServer*/Setup.exe",
       "IsMsi": false,
-      "ProductId": "08E03E6F-95D3-4D33-A171-E0DC996E08E3"
+      "ProductId": "458BF5FF-2DF8-426B-AEBC-BE4C47DB6B54",
+      "Version": "10.8",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Server\\Patches",
+      "Patches": []
     },
 	  {
        "Name": "Portal for ArcGIS",
-       "SourcePath": "C:\\Setups\\Portal_for_ArcGIS_Windows_1071_169688.exe",
-       "RemotePath":"Portal_for_ArcGIS_Windows_1071_169688.exe",
+       "SourcePath": "C:\\Setups\\Portal_for_ArcGIS_Windows_108_172870.exe",
+       "RemotePath":"Portal_for_ArcGIS_Windows_108_172870.exe",
        "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Portal\\installer.exe",
        "InstallDir": "$env:SystemDrive\\PortalForArcGIS",
        "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Portal\" CONTENTDIR=$env:SystemDrive\\portalforarcgis\\content",
        "PathChecked": "$env:SystemDrive\\PortalForArcGIS",
        "ExtractedSetupRelativePath": "PortalForArcGIS*/Setup.exe",
        "IsMsi": false,
-       "ProductId": "7FDEEE00-6641-4E27-A54E-82ACCCE14D00"
+       "ProductId": "7D432555-69F9-4945-8EE7-FC4503A94D6A",
+       "Version": "10.8",
+       "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Portal\\Patches",
+       "Patches": []
     },
 	  {
        "Name": "Web Styles",
-       "SourcePath": "C:\\Setups\\ArcGIS_Web_Styles_Windows_1071_170272.exe",
-       "RemotePath":"ArcGIS_Web_Styles_Windows_1071_170272.exe",
+       "SourcePath": "C:\\Setups\\Portal_for_ArcGIS_Web_Styles_Windows_108_172871.exe",
+       "RemotePath":"Portal_for_ArcGIS_Web_Styles_Windows_108_172871.exe",
        "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebStyles\\installer.exe",
        "InstallDir": "",
        "Arguments": "/qb",
        "PathChecked": "$env:SystemDrive\\WebStyles",
        "ExtractedSetupRelativePath": "WebStyles*/Setup.exe",
        "IsMsi": false,
-       "ProductId": "B2E42A8D-1EE9-4610-9932-D0FCFD06D2AF"
+       "ProductId": "EF31CB36-2EB4-4FD3-A451-AC12FD22A582",
+       "Version": "10.8",
+       "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebStyles\\Patches",
+       "Patches": []
     },
 	  {
        "Name": "DataStore",
-       "SourcePath": "C:\\Setups\\ArcGIS_DataStore_Windows_1071_169689.exe",
-       "RemotePath":"ArcGIS_DataStore_Windows_1071_169689.exe",
+       "SourcePath": "C:\\Setups\\ArcGIS_DataStore_Windows_108_172872.exe",
+       "RemotePath":"ArcGIS_DataStore_Windows_108_172872.exe",
        "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\DataStore\\installer.exe",
        "InstallDir": "$env:SystemDrive\\arcgisdatastore",
        "Arguments": "/qb InstallDir=\"$env:SystemDrive\\ArcGIS\\DataStore\" ",
        "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\DataStore",
        "ExtractedSetupRelativePath": "ArcGISDataStore*/Setup.exe",
        "IsMsi": false,
-       "ProductId": "112E5FD0-9DD2-45DA-ACD5-A21AA45F67E2"
+       "ProductId": "2018A7D8-CBE8-4BCF-AF0E-C9AAFB4C9B6D",
+       "Version": "10.8",
+       "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\DataStore\\Patches",
+       "Patches": []
      },
      {
        "Name": "GeoEvent",
-       "SourcePath": "C:\\Setups\\ArcGIS_GeoEvent_Server_1071_169716.exe",
-       "RemotePath":"ArcGIS_GeoEvent_Server_1071_169716.exe",
+       "SourcePath": "C:\\Setups\\ArcGIS_GeoEvent_Server_108_172924.exe",
+       "RemotePath":"ArcGIS_GeoEvent_Server_108_172924.exe",
        "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\GeoEvent\\installer.exe",
        "InstallDir": "$env:SystemDrive\\ArcGIS\\GeoEvent",
        "Arguments": "/qb ",
        "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\GeoEvent",
        "ExtractedSetupRelativePath": "GeoEvent*/Setup.exe",
        "IsMsi": false,
-       "ProductId": "3AE4EE62-B5ED-45CB-8917-F761B9335F33"
+       "ProductId": "10F38ED5-B9A1-4F0C-B8E2-06AD1365814C",
+       "Version": "10.8",
+       "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\GeoEvent\\Patches",
+       "Patches": []
     },
     {
       "Name": "Notebook Server",
-      "SourcePath": "C:\\Setups\\ArcGIS_Notebook_Server_1071_169734.exe",
-      "RemotePath":"ArcGIS_Notebook_Server_1071_169734.exe",
+      "SourcePath": "C:\\Setups\\ArcGIS_Notebook_Server_108_172941.exe",
+      "RemotePath":"ArcGIS_Notebook_Server_108_172941.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\NotebookServer\\installer.exe",
       "InstallDir": "$env:SystemDrive\\arcgis",
       "Arguments": "/qb InstallDir=\"$env:SystemDrive\\ArcGIS\\NotebookServer\" ",
       "PathChecked": "$env:SystemDrive\\Program Files\\ArcGIS\\NotebookServer",
       "ExtractedSetupRelativePath": "NotebookServer*/Setup.exe",
       "IsMsi": false,
-      "ProductId": "F6DF77B9-F35E-4877-A7B1-63E1918B4E19"
+      "ProductId": "B1DB581E-E66C-4E58-B9E3-50A4D6CB5982",
+      "Version": "10.8",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\NotebookServer\\Patches",
+      "Patches": []
     },
     {
       "Name": "IIS URL Rewrite Module 2",
@@ -99,15 +117,37 @@
       "ProductId": "279B4CB0-A213-4F94-B224-19D6F5C59942"
     },
     {
-      "Name": "Microsoft SQL Server 2012 Native Client",
-      "SourcePath": "C:\\Setups\\sqlncli.msi",
-      "RemotePath":"sqlncli.msi",
-      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient\\sqlncli.msi",
-      "Arguments": "/qn IACCEPTSQLNCLILICENSETERMS=YES /quiet",
-      "PathChecked": "$env:SystemRoot\\System32\\sqlncli11.dll",
-      "ExtractedSetupRelativePath": "sqlncli.msi",
+      "Name": "Microsoft ODBC Driver 13.1 for SQL Server",
+      "SourcePath": "C:\\Setups\\msodbcsql.msi",
+      "RemotePath":"msodbcsql.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient\\msodbcsql.msi",
+      "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
+      "PathChecked": "$env:SystemRoot\\System32\\msodbcsql.msi",
+      "ExtractedSetupRelativePath": "msodbcsql.msi",
       "IsMsi": true,
-      "ProductId": "B9274744-8BAE-4874-8E59-2610919CD419"
+      "ProductId": "7E425BFB-1DEB-499F-8F3F-3522A6E98754"
+    },
+    {
+      "Name": "Microsoft ODBC Driver 17 for SQL Server",
+      "SourcePath": "C:\\Setups\\msodbcsql_17.4.1.1_x64.msi",
+      "RemotePath":"msodbcsql_17.4.1.1_x64.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient\\msodbcsql_17.4.1.1_x64.msi",
+      "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
+      "PathChecked": "$env:SystemRoot\\System32\\msodbcsql_17.4.1.1_x64.msi",
+      "ExtractedSetupRelativePath": "msodbcsql_17.4.1.1_x64.msi",
+      "IsMsi": true,
+      "ProductId": "72AFAF21-33FB-45A5-9468-A9EC07427F82"
+    },
+    {
+      "Name": "Microsoft SQL Command Line Utility",
+      "SourcePath": "C:\\Setups\\MsSqlCmdLnUtils.msi",
+      "RemotePath":"MsSqlCmdLnUtils.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient\\MsSqlCmdLnUtils.msi",
+      "Arguments": "/quiet /qn IACCEPTMSSQLCMDLNUTILSLICENSETERMS=YES",
+      "PathChecked": "$env:SystemRoot\\System32\\MsSqlCmdLnUtils.msi",
+      "ExtractedSetupRelativePath": "MsSqlCmdLnUtils.msi",
+      "IsMsi": true,
+      "ProductId": "2E3D1932-4748-4F88-81FC-B92558F64849"
     }
   ]
 }

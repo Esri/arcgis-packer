@@ -1,43 +1,52 @@
 {
-  "WindowsFeatures": [
-
-  ],
+  "WindowsFeatures": [],
   "Installers": [
     {
       "Name": "ArcGIS Desktop",
-      "SourcePath": "C:\\Setups\\ArcGIS_Desktop_1071_169506.exe",
-      "RemotePath":"ArcGIS_Desktop_1071_169506.exe",
+      "SourcePath": "C:\\Setups\\ArcGIS_Desktop_108_172737.exe",
+      "RemotePath": "ArcGIS_Desktop_108_172737.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Desktop\\installer.exe",
       "InstallDir": "$env:SystemDrive\\Desktop",
       "Arguments": "/qb ADDLOCAL=ALL INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Desktop\" INSTALLDIR1=\"$env:SystemDrive\\python27\" ESRI_LICENSE_HOST=\"$env:ComputerName\" SOFTWARE_CLASS=\"Editor\" SEAT_PREFERENCE=\"Fixed\" DESKTOP_CONFIG=\"TRUE\" MODIFYFLEXDACL=\"TRUE\"",
       "PathChecked": "$env:SystemDrive\\ArcGIS\\Desktop",
       "ExtractedSetupRelativePath": "ArcGISDesktop*/Setup.exe",
       "IsMsi": false,
-      "ProductId": "69262D87-3697-492B-ABED-765DDC15118B"
+      "ProductId": "3DB5C522-636F-4FC2-9C38-298DBEBFD0BC",
+      "Version": "10.8",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Desktop\\Patches",
+      "Patches": []
     },
-	{
+    {
       "Name": "ArcGIS Pro",
-      "SourcePath": "C:\\Setups\\ArcGISPro_23_167023.exe",
-      "RemotePath":"ArcGISPro_23_167023.exe",
+      "SourcePath": "C:\\Setups\\ArcGISPro_24_169232.exe",
+      "RemotePath": "ArcGISPro_24_169232.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\installer.exe",
       "InstallDir": "$env:SystemDrive\\Pro",
       "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Pro\" ALLUSERS=1 /qb ",
       "PathChecked": "$env:SystemDrive\\ArcGIS\\Pro",
       "ExtractedSetupRelativePath": "ArcGISPro*/ArcGISPro.msi",
-      "IsMsi": true,
-      "ProductId": "9CB8A8C5-202D-4580-AF55-E09803BA1959"
+      "IsMsi": false,
+      "ProductId": "E3B1CE52-A1E6-4386-95C4-5AB450EF57BD",
+      "Version": "2.4",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\Patches",
+      "Patches": [
+        "C:\\Setups\\patches\\pro\\ArcGIS_Pro_243_173271.msp"
+      ]
     },
-	{
+    {
       "Name": "ArcGIS License Manager",
-      "SourcePath": "C:\\Setups\\ArcGIS_License_Manager_Windows_2019_0_169344.exe",
-      "RemotePath":"ArcGIS_License_Manager_Windows_2019_0_169344.exe",
+      "SourcePath": "C:\\Setups\\ArcGIS_License_Manager_Windows_2019_2_173083.exe",
+      "RemotePath": "ArcGIS_License_Manager_Windows_2019_2_173083.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\installer.exe",
       "InstallDir": "$env:SystemDrive\\ArcGIS\\LicenseManager",
       "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\LicenseManager\" /qb ",
       "PathChecked": "$env:SystemDrive\\ArcGIS\\Pro",
       "ExtractedSetupRelativePath": "LicenseManager*/Setup.exe",
       "IsMsi": false,
-      "ProductId": "CFF43ACB-9B0C-4725-B489-7F969F5B90AB"
+      "ProductId": "77F1D4EB-0225-4626-BB9E-7FCB4B0309E5",
+      "Version": "2019.2",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\Patches",
+      "Patches": []
     }
   ]
 }

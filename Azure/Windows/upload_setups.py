@@ -54,6 +54,7 @@ def _check_setups_local(setups: List, ignore: List[str]) -> bool:
     Checks if all setups specified in config.py are available.
     """
     missing_setups = []
+    missing_patches = []
     for setup in setups:
         print("Checking for {} located at {}".format(setup['Name'], setup['SourcePath']))
         if not os.path.exists(setup['SourcePath']):
@@ -61,11 +62,20 @@ def _check_setups_local(setups: List, ignore: List[str]) -> bool:
                 missing_setups.append(setup)
             elif not any(setup['Name'] in s for s in ignore):
                 missing_setups.append(setup)
-    if missing_setups:
-        print("Missing {} setups: {} ".format(len(missing_setups), missing_setups))
+        else:
+            if setup['IsMsi'] is False:
+                for patch in setup['Patches']:
+                    print("Checking for patch for {} located at {}".format(setup['Name'], patch))
+                    if not os.path.exists(patch):
+                        missing_patches.append({"InstallerName": setup['Name'],"PatchPath": patch})
+    if missing_setups or missing_patches:
+        if missing_setups:
+            print("Missing {} setups: {} ".format(len(missing_setups), missing_setups))
+        if missing_patches:
+            print("Missing {} patches: {} ".format(len(missing_patches), missing_setups))
         return False
     else:
-        print("All setups are available.")
+        print("All setups and patches are available.")
         return True
 
 
@@ -77,6 +87,11 @@ def _main(args):
             for installer in config_json['Installers']:
                 print("Uploading {} to AFS ".format(installer['SourcePath']))
                 file_service.create_file_from_path(args.afs_name, None, installer['RemotePath'], installer['SourcePath'])
+                if installer['IsMsi'] is False:
+                    for patch in installer['Patches']:
+                        patch_file_name = os.path.basename(patch)
+                        print("Uploading {} to AFS ".format(patch_file_name))
+                        file_service.create_file_from_path(args.afs_name, None, patch_file_name, patch)
                 #archive_command = r'"{}" cp {} {}'.format(args.azcopy_path, installer['SourcePath'], args.afs_sas_uri)
                 #print(archive_command)
                 #subprocess.call(archive_command, shell=True)
@@ -86,3 +101,4 @@ def _main(args):
 
 if __name__ == "__main__":
     sys.exit(_main(_arg_parser()))
+    

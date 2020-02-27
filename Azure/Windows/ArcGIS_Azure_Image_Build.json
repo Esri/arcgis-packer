@@ -18,7 +18,8 @@
         "Azure_File_Share_Enpoint_Suffix":"core.windows.net",
         "Azure_ImagePrefix":"",
         "Azure_StorageAccountName":"",
-        "Azure_StorageContainerName":""
+        "Azure_StorageContainerName":"",
+        "Azure_BuildVMName":"arcgisbuildvm"
     },
     "builders": [{
         "type": "azure-arm",
@@ -45,7 +46,7 @@
         "winrm_password":"ArcGIS2019#",
         
         "location": "{{user `Azure_Location`}}",
-        "temp_compute_name": "buildvm",
+        "temp_compute_name": "{{user `Azure_BuildVMName`}}",
         "vm_size": "Standard_DS2_v2",
         "os_disk_size_gb": 128
     }],
@@ -70,6 +71,18 @@
                 "AFS_Endpoint=\\\\{{user `Azure_Storage_Acc`}}.file.{{user `Azure_File_Share_Enpoint_Suffix`}}\\{{user `Azure_File_Share_Name`}}",
                 "ArcGIS_Module_Zip_Path={{user `ArcGIS_Module_Zip_Destination_Path`}}",
                 "Install_Config_File_Path={{user `Install_Config_Destination_File_Path`}}"
+            ]
+        },
+        {
+            "type": "powershell",
+            "script": "{{template_dir}}\\CleanImageScript.ps1"
+        },
+        {
+            "type": "powershell",
+            "inline": [
+              "Write-Host 'Sysprep started'",
+              "& $env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /quiet /quit",
+              "while($true) { $imageState = Get-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\State | Select ImageState; if($imageState.ImageState -ne 'IMAGE_STATE_GENERALIZE_RESEAL_TO_OOBE') { Write-Output $imageState.ImageState; Start-Sleep -s 10  } else { break } }"
             ]
         }
     ]
