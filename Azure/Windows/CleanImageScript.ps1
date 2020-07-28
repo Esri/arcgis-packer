@@ -21,6 +21,8 @@
    limitations under the License.​
 #>
 
+$ErrorActionPreference = 'SilentlyContinue'
+
 Write-Host "Cleaning SxS..."
 Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
 
