@@ -1,0 +1,29 @@
+{
+  "WindowsFeatures": [],
+  "Installers": [
+    {
+      "Name": "ArcGIS Pro",
+      "SourcePath": "C:\\Setups\\ArcGISPro_27_176624.exe",
+      "RemotePath": "ArcGISPro_27_176624.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\installer.exe",
+      "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Pro\" ALLUSERS=1 /qb ACCEPTEULA=YES",
+      "IsMsi": false,
+      "ProductId": "612674FE-4B64-4254-A9AD-C31568C89EA4",
+      "Version": "2.7",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\Patches",
+      "Patches": []
+    },
+    {
+      "Name": "ArcGIS License Manager",
+      "SourcePath": "C:\\Setups\\ArcGIS_License_Manager_Windows_2020_1_176572.exe",
+      "RemotePath": "ArcGIS_License_Manager_Windows_2020_1_176572.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\installer.exe",
+      "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\LicenseManager\" /qb ",
+      "IsMsi": false,
+      "ProductId": "3C9B5AFE-057B-47B3-83A6-D348ABAC3E14",
+      "Version": "2020.1",
+      "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\Patches",
+      "Patches": []
+    }
+  ]
+}
