@@ -23,7 +23,7 @@
     },
     "builders": [
         {
-            "name": "desktop-image-builder",
+            "name": "pro-image-builder",
             "type": "azure-arm",
             "client_id":"{{user `user_client_id`}}",
             "client_secret":"{{user `user_client_secret`}}",
@@ -45,8 +45,8 @@
             "winrm_insecure": true,
             "winrm_timeout": "12h",
             "winrm_username": "packer",
-            "winrm_password":"ArcGIS2019#",
-            
+            "winrm_password":"ArcGIS2021#",
+
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
             "vm_size": "Standard_DS2_v2",
@@ -69,13 +69,12 @@
             "image_publisher": "MicrosoftWindowsServer",
             "image_offer": "WindowsServer",
             "image_sku": "2019-Datacenter",
-
             "communicator": "winrm",
             "winrm_use_ssl": true,
             "winrm_insecure": true,
             "winrm_timeout": "12h",
             "winrm_username": "packer",
-            "winrm_password":"ArcGIS2019#",
+            "winrm_password":"ArcGIS2021#",
             
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
@@ -86,12 +85,12 @@
     "provisioners": [
         {
             "type": "powershell",
-            "only": ["desktop-image-builder"],
+            "only": ["pro-image-builder"],
             "script": "{{template_dir}}\\InstallDotnet48.ps1"
         },
         {
             "type": "windows-restart",
-            "only": ["desktop-image-builder"],
+            "only": ["pro-image-builder"],
             "restart_check_command": "powershell -command \"& {Write-Output 'Installed Dotnet Version'; Write-Output (Get-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full' -Name Version).Version}\""
         },
         {
