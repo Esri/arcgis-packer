@@ -3,27 +3,36 @@
   "Installers": [
     {
       "Name": "ArcGIS Pro",
-      "SourcePath": "C:\\Setups\\ArcGISPro_27_176624.exe",
-      "RemotePath": "ArcGISPro_27_176624.exe",
+      "SourcePath": "C:\\Setups\\ArcGISPro_29_179927.exe",
+      "RemotePath": "ArcGISPro_29_179927.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\installer.exe",
       "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Pro\" ALLUSERS=1 /qb ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "612674FE-4B64-4254-A9AD-C31568C89EA4",
-      "Version": "2.7",
+      "ProductId": "AD53732E-507C-4A7F-B451-BE7EA01D0832",
+      "Version": "2.9",
       "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro\\Patches",
       "Patches": []
     },
     {
       "Name": "ArcGIS License Manager",
-      "SourcePath": "C:\\Setups\\ArcGIS_License_Manager_Windows_2020_1_176572.exe",
-      "RemotePath": "ArcGIS_License_Manager_Windows_2020_1_176572.exe",
+      "SourcePath": "C:\\Setups\\ArcGIS_License_Manager_Windows_2021_1_180127.exe",
+      "RemotePath": "ArcGIS_License_Manager_Windows_2021_1_180127.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\installer.exe",
-      "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\LicenseManager\" /qb ",
+      "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\LicenseManager\" /qb ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "3C9B5AFE-057B-47B3-83A6-D348ABAC3E14",
-      "Version": "2020.1",
+      "ProductId": "DA36A877-1BF2-4E28-9CE3-D3A07FB645A3",
+      "Version": "2021.1",
       "PatchesLocalDir": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager\\Patches",
       "Patches": []
+    },
+    {
+      "Name": "Microsoft ODBC Driver 17 for SQL Server",
+      "SourcePath": "C:\\Setups\\msodbcsql_17.4.1.1_x64.msi",
+      "RemotePath": "msodbcsql_17.4.1.1_x64.msi",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient\\msodbcsql_17.4.1.1_x64.msi",
+      "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
+      "IsMsi": true,
+      "ProductId": "72AFAF21-33FB-45A5-9468-A9EC07427F82"
     }
   ]
 }
