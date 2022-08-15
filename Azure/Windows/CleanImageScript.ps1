@@ -1,6 +1,6 @@
 <#
 
-   Copyright 2021 Esri
+   Copyright 2022 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
 
@@ -20,7 +20,6 @@
 
    limitations under the License.​
 #>
-
 $ErrorActionPreference = 'SilentlyContinue'
 
 Write-Host "Cleaning SxS..."

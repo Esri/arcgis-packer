@@ -1,18 +1,26 @@
 {
-    "user_client_id": "<The Active Directory service principal associated with your builder.>",
-    "user_client_secret": "<The password or secret for your service principal.>",
-    "user_tenant_id": "<Tenant Id - The account identifier with which your client_id and subscription_id are associated. If not specified, tenant_id will be looked up using subscription_id>",
-    "user_subscription_id": "<Subscription under which the build will be performed. The service principal specified in client_id must have full access to this subscription, unless build_resource_group_name option is specified in which case it needs to have owner access to the existing resource group specified in build_resource_group_name parameter.>",
-    "Azure_ResourceGroupName": "<Resource group under which the final artifact will be stored.>",
-    "Azure_ImagePrefix": "<VHD prefix. The final artifacts will be named PREFIX-osDisk.UUID and PREFIX-vmTemplate.UUID.>",
-    "Azure_StorageAccountName": "<Storage account under which the final artifact will be stored>",
-    "Azure_StorageContainerName": "<Destination container name. Essentially the directory where your VHD will be organized in Azure. The captured VHD's URL will be https://<storage_account>.blob.core.windows.net/system/Microsoft.Compute/Images/<capture_container_name>/<capture_name_prefix>.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.vhd>",
+    "Azure_ClientId": "<The Active Directory service principal associated with your builder>",
+    "Azure_ClientSecret": "<The password or secret for your service principal.>",
+    "Azure_TenantId": "<Tenant Id - The account identifier with which your client_id and subscription_id are associated. If not specified, tenant_id will be looked up using subscription_id>",
+    "Azure_SubscriptionId": "<Subscription under which the build will be performed. The service principal specified in client_id must have full access to this subscription, unless build_resource_group_name option is specified in which case it needs to have owner access to the existing resource group specified in build_resource_group_name parameter.>",
+
     "Azure_Location": "<Azure datacenter in which your VM will build. ex - East US>",
-    "ArcGIS_Module_Zip_Source_File_Path": "<ArcGIS Powershell DSC zipped Module Version 3.1 or greater>",
-    "Install_Config_Source_File_Path": "<EnterpriseInstallConfiguration.json or ProInstallConfiguration.json File Path>",
-    "Use_Azure_Files": "<True if using Azure Files for staging ArcGIS setups.>",
-    "Azure_Storage_Acc": "<Storage Account Name associated with AFS staging the setups.>",
-    "Azure_Storage_Acc_Key": "<Storage Account Key associated with AFS staging the setups.>",
-    "Azure_File_Share_Name": "<Name of the Azure FileShare where setups are staged>",
-    "Azure_File_Share_Endpoint_Suffix": "<Azure FileShare Endpoint Suffix. ex - 'core.window.net'>"
+    "Azure_ResourceGroupName": "<Resource group under which the final artifact will be stored.>",
+    "Azure_ComputeGalleryName": "<Destination Compute Gallery Name.>",
+    "Azure_ComputeGalleryReplicationRegion": "<Azure datacenter in which your Compute Gallery VM Image will be replicated. ex - East US>",
+    
+    "Azure_ImageName": "<Compute Gallery VM Image Definition Name>",
+    "Azure_ImageVersion": "<Compute Gallery VM Image Version>",
+
+    "Install_Config_Source_File_Path": "<Install Configuration File. ex-'C:\\WorkingDir\\InstallConfigs\\EnterpriseInstallConfiguration.json'>",
+    
+    "ArcGIS_Module_Zip_Source_File_Path": "<Zipped ArcGIS Module Path - C:\\WorkingDir\\ArcGIS.zip",
+    
+    "Use_AzureFiles": "true",
+    "Azure_ArtifactsStorageAccountKey": "<Storage Account Name>",
+    "Azure_ArtifactsStorageAccountName": "<Storage Account Key>",
+    "Azure_ArtifactsStorageFileShareName": "<Azure FileShare Name>",
+    "Azure_ArtifactsStorageFileShareEnpointSuffix": "core.windows.net",
+    
+    "Azure_BuildVMName": "<Azure FileShare Endpoint Suffix. ex - 'core.window.net'>"
 }
