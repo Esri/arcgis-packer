@@ -23,26 +23,15 @@
 
 $ErrorActionPreference = 'Stop'
 try{
-    $url = "https://go.microsoft.com/fwlink/?linkid=2088631" 
-    $registryPath = "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"
-    $installedVersion = [version]((Get-ItemProperty -Path $registryPath -Name Version).Version)
-    $installedVersion
-
-    if($installedVersion -ge [version]("4.8")) {
-        write-host "dotnet 4.8 already installed"
-        return
-    }
-
-    $path = "$psscriptroot\ndp48-x86-x64-allos-enu.exe" 
-    $path
-
+    $url = "https://download.visualstudio.microsoft.com/download/pr/5681bdf9-0a48-45ac-b7bf-21b7b61657aa/bbdc43bc7bf0d15b97c1a98ae2e82ec0/windowsdesktop-runtime-6.0.5-win-x64.exe" 
+    $path = "$psscriptroot\windowsdesktop-runtime-6.0.5-win-x64.exe" 
+    
     if(!(test-path $path)) {
         "Downloading [$url]`nSaving at [$path]" 
         (new-object net.webClient).DownloadFile($url, $path) 
     }
 
-    Invoke-Command -ScriptBlock { Start-Process -FilePath $path -ArgumentList "/q  /norestart" -Wait -PassThru } 
-    Write-Host (Get-ItemProperty -Path $registryPath -Name Version).Version
+    Invoke-Command -ScriptBlock { Start-Process -FilePath $path -ArgumentList "/install /quiet /norestart" -Wait -PassThru }
 }catch{
     write-host $_
     exit 1

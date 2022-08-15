@@ -1,6 +1,6 @@
 <#
 
-   Copyright 2021 Esri
+   Copyright 2022 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
 
@@ -25,7 +25,7 @@ $ErrorActionPreference = 'Stop'
 try{
 
     # Status of Winrm
-    Get-Service -Name WinRM | Select Status
+    Get-Service -Name WinRM | Select-Object Status
 
     # Increase WinRM timeouts
 
@@ -37,7 +37,7 @@ try{
 
     winrm quickconfig -quiet
 
-    $DSCModuleZipPath = $env:ArcGIS_Module_Zip_Path
+    $DSCModuleZipPath = $env:ArcGIS_Module_Zip_Path  
     $InstallConfigFilePath = $env:Install_Config_File_Path
     $UseAzureFiles = ($env:Use_Azure_Files -ieq "True")
 
@@ -61,9 +61,9 @@ try{
         $acctKey = ConvertTo-SecureString -String $AzureStorageAccKey -AsPlainText -Force
         $AFSCredential = New-Object System.Management.Automation.PSCredential -ArgumentList $AFSUserName, $acctKey
 
-        Invoke-BuildArcGISAzureImage -InstallConfigFilePath $InstallConfigFilePath -SkipFilesDownload $false -UseAzureFiles $true -AFSCredential $AFSCredential -AFSEndpoint $AFSEndpoint -DebugSwitch
+        Invoke-BuildArcGISAzureImage -InstallConfigFilePath $InstallConfigFilePath -SkipFilesDownload $false -FileSourceType "AzureFiles" -AFSCredential $AFSCredential -AFSEndpoint $AFSEndpoint -DebugSwitch
     }else{
-        Invoke-BuildArcGISAzureImage -InstallConfigFilePath $InstallConfigFilePath -SkipFilesDownload $false -UseAzureFiles $false -DebugSwitch
+        Invoke-BuildArcGISAzureImage -InstallConfigFilePath $InstallConfigFilePath -SkipFilesDownload $false -FileSourceType "Default" -DebugSwitch
     }
 
     Write-Host "Downloaded and Installed Artifacts"
@@ -72,7 +72,7 @@ try{
     Write-Host 'Removing ArcGIS Module and Temp Folders from Local Machine'
     Remove-Item $DSCModuleZipPath -Force -Recurse
     Remove-Item $InstallConfigFilePath -Force
-    if(Test-Path $DSC_TARGET ){ Remove-Item $DSC_TARGET  -Force -ErrorAction Ignore -Recurse}
+    if(Test-Path $DSC_TARGET ){ Remove-Item $DSC_TARGET -Force -ErrorAction Ignore -Recurse}
     Write-Host 'Successfully removed ArcGIS Module from Local Machine'
 
 }catch{
