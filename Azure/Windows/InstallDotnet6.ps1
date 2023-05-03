@@ -1,6 +1,6 @@
 <#
 
-   Copyright 2022 Esri
+   Copyright 2023 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
 
@@ -23,8 +23,8 @@
 
 $ErrorActionPreference = 'Stop'
 try{
-    $url = "https://download.visualstudio.microsoft.com/download/pr/5681bdf9-0a48-45ac-b7bf-21b7b61657aa/bbdc43bc7bf0d15b97c1a98ae2e82ec0/windowsdesktop-runtime-6.0.5-win-x64.exe" 
-    $path = "$psscriptroot\windowsdesktop-runtime-6.0.5-win-x64.exe" 
+    $url = "https://download.visualstudio.microsoft.com/download/pr/9d6b6b34-44b5-4cf4-b924-79a00deb9795/2f17c30bdf42b6a8950a8552438cf8c1/windowsdesktop-runtime-6.0.6-win-x64.exe" 
+    $path = "$psscriptroot\windowsdesktop-runtime-6.0.6-win-x64.exe" 
     
     if(!(test-path $path)) {
         "Downloading [$url]`nSaving at [$path]" 
