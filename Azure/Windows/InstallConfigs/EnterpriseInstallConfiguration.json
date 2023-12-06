@@ -11,8 +11,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Server",
       "Arguments": "/qn INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Server\" INSTALLDIR1=$env:SystemDrive\\Python27 ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "0F6C2D4F-9D41-4D25-A8AF-51E328D7CD8F",
-      "Version": "11.1",
+      "ProductId": "4130E39E-FD8C-4DE0-AE91-AFEC71063B2D",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -23,8 +23,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Portal",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Portal\" CONTENTDIR=$env:SystemDrive\\portalforarcgis\\content ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "BED48866-C615-4790-AD87-01F114C1A999",
-      "Version": "11.1",
+      "ProductId": "F03C23C1-1F2C-42D0-85C4-38F49B710035",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -35,8 +35,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebStyles",
       "Arguments": "/qb ",
       "IsMsi": false,
-      "ProductId": "67EDD399-CBD8-48C8-8B72-D79FBBBD79B2",
-      "Version": "11.1",
+      "ProductId": "0508DE8B-B6B2-42AD-B955-77451C3ACB60",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -47,8 +47,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\DataStore",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\DataStore\" ACCEPTEULA=YES ADDLOCAL=ALL",
       "IsMsi": false,
-      "ProductId": "391B3A39-0951-43E3-991D-82C82CA6E4A4",
-      "Version": "11.1",
+      "ProductId": "FE7F4A14-4D96-4B31-8937-BA19C0A92DDB",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -59,8 +59,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\GeoEvent",
       "Arguments": "/qb ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "475EA5B0-E454-4870-BB1F-AB81EDDEC2A7",
-      "Version": "11.1",
+      "ProductId": "7CBB01F9-90D3-42A6-99A8-70E773B5E8C5",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -71,8 +71,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\NotebookServer",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\NotebookServer\" ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "B449287C-6C2B-4D83-BD27-B416A2171FD5",
-      "Version": "11.1",
+      "ProductId": "7CF68441-8657-48C3-93C2-DB2DC3EFA9E5",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -83,8 +83,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\NotebookServerSamplesData",
       "Arguments": "/qb ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "A8752FEB-3783-44FC-AC1D-A9DACA94822E",
-      "Version": "11.1",
+      "ProductId": "3A9E12F6-7D4B-4DA2-BA2C-C9D0E900CF94",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -95,8 +95,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\MissionServer",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Mission\" ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "C8723ED4-272B-43B5-88D6-98F484DFFF09",
-      "Version": "11.1",
+      "ProductId": "5721BCA3-D4BB-42D3-A719-787D0B11F478",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -107,37 +107,53 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WorkflowManagerServer",
       "Arguments": "/qb ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "BCCADE20-4363-4D62-AE55-BB51329210CF",
-      "Version": "11.1",
+      "ProductId": "434D85E9-9CFB-4683-9FFF-5C38CDEBD676",
+      "Version": "11.2",
       "Patches": [],
       "AdditionalFiles": []
     },
     {
+      "Name": "Web Adaptor IIS",
+      "SourcePath": "C:\\Setups\\WebAdaptorIIS.exe",
+      "RemotePath": "WebAdaptorIIS.exe",
+      "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebAdaptorIIS",
+      "Arguments": "",
+      "SkipInstall": true,
+      "IsMsi": false,
+      "ProductId": "",
+      "Version": "11.2",
+      "Patches": [],
+      "AdditionalFiles": [
+        "C:\\Setups\\dotnet-hosting-6.0.24-win.exe",
+        "C:\\Setups\\WebDeploy_amd64_en-US.msi"
+      ]
+    },
+    {
       "Name": "Microsoft ODBC Driver 17 for SQL Server",
-      "SourcePath": "C:\\Setups\\msodbcsql_17.10.2.1_x64.msi",
-      "RemotePath": "msodbcsql_17.10.2.1_x64.msi",
+      "SourcePath": "C:\\Setups\\msodbcsql_17.10.5_x64.msi",
+      "RemotePath": "msodbcsql_17.10.5_x64.msi",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient",
       "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
       "IsMsi": true,
-      "ProductId": "E5E7F122-05CC-4B9E-B162-0E99AE8CAB6E"
+      "ProductId": "57B9F896-DE52-4CFA-B7DE-9EFD00A1E020"
     },
     {
       "Name": "Microsoft ODBC Driver 18 for SQL Server",
-      "SourcePath": "C:\\Setups\\msodbcsql_18.1.2.1_x64.msi",
-      "RemotePath": "msodbcsql_18.1.2.1_x64.msi",
+      "SourcePath": "C:\\Setups\\msodbcsql_18.3.2.1_x64.msi",
+      "RemotePath": "msodbcsql_18.3.2.1_x64.msi",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient",
       "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
       "IsMsi": true,
-      "ProductId": "ABBE0FFF-BE91-4236-BD68-EB442A0D5CE0"
+      "ProductId": "4250BFD2-7B44-4EE5-9595-3A448829B329"
     },
     {
-      "Name": "Microsoft SQL Command Line Utility 15.0.2000.5",
-      "SourcePath": "C:\\Setups\\MsSqlCmdLnUtils.msi",
-      "RemotePath": "MsSqlCmdLnUtils.msi",
+      "Name": "Microsoft SQL Command Line Utility 15.0.4298.1",
+      "SourcePath": "C:\\Setups\\MsSqlCmdLnUtils_15.0.4298.1.msi",
+      "RemotePath": "MsSqlCmdLnUtils_15.0.4298.1.msi",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient",
       "Arguments": "/quiet /qn IACCEPTMSSQLCMDLNUTILSLICENSETERMS=YES",
       "IsMsi": true,
-      "ProductId": "EDA3FABE-E481-4E69-A7B0-E845DF0FEC22"
+      "ProductId": "6F11B2D6-193B-4216-A8E6-D7092834F8FB"
     }
   ]
 }
