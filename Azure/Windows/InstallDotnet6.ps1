@@ -23,8 +23,8 @@
 
 $ErrorActionPreference = 'Stop'
 try{
-    $url = "https://download.visualstudio.microsoft.com/download/pr/9d6b6b34-44b5-4cf4-b924-79a00deb9795/2f17c30bdf42b6a8950a8552438cf8c1/windowsdesktop-runtime-6.0.6-win-x64.exe" 
-    $path = "$psscriptroot\windowsdesktop-runtime-6.0.6-win-x64.exe" 
+    $url = "https://download.visualstudio.microsoft.com/download/pr/dde9eb7e-8ea8-494a-9b04-5db26c7740e2/43d5050cfa63b7323749c7e56fedd3ac/windowsdesktop-runtime-6.0.24-win-x64.exe"
+    $path = "$psscriptroot\windowsdesktop-runtime-6.0.24-win-x64.exe" 
     
     if(!(test-path $path)) {
         "Downloading [$url]`nSaving at [$path]" 
