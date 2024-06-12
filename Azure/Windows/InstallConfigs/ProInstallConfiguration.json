@@ -8,8 +8,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Pro",
       "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Pro\" ADDLOCAL=Pro ALLUSERS=1 /qn ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "76DFAD3E-96C5-4544-A6B4-3774DBF88B4E",
-      "Version": "3.2",
+      "ProductId": "B43BC6C2-05D2-460B-AEE4-D15A9CA7B55E",
+      "Version": "3.3",
       "Patches": [],
       "AdditionalFiles": []
     },
@@ -20,19 +20,19 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\LicenseManager",
       "Arguments": " INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\LicenseManager\" /qn ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "C5E546F7-5E07-4AAB-A367-15FF52D0C683",
-      "Version": "2023.0",
+      "ProductId": "D9D91CDE-048A-47B5-AFE7-FB397DAF87D9",
+      "Version": "2024.0",
       "Patches": [],
       "AdditionalFiles": []
     },
     {
       "Name": "Microsoft ODBC Driver 18 for SQL Server",
-      "SourcePath": "C:\\Setups\\msodbcsql_18.3.2.1_x64.msi",
-      "RemotePath": "msodbcsql_18.3.2.1_x64.msi",
+      "SourcePath": "C:\\Setups\\msodbcsql_18.3.3.1_x64.msi",
+      "RemotePath": "msodbcsql_18.3.3.1_x64.msi",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient",
       "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
       "IsMsi": true,
-      "ProductId": "4250BFD2-7B44-4EE5-9595-3A448829B329"
+      "ProductId": "3C6CE53F-AF0C-4CC3-9A7E-4E7909FA4EF7"
     }
   ]
 }

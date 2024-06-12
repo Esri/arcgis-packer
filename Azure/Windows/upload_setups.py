@@ -55,6 +55,7 @@ def _check_setups_local(setups: List, ignore: List[str]) -> bool:
     """
     missing_setups = []
     missing_patches = []
+    missing_volumes = []
     for setup in setups:
         print("Checking for {} located at {}".format(setup['Name'], setup['SourcePath']))
         if not os.path.exists(setup['SourcePath']):
@@ -64,13 +65,22 @@ def _check_setups_local(setups: List, ignore: List[str]) -> bool:
                 missing_setups.append(setup)
         else:
             if setup['IsMsi'] is False:
-                for patch in setup['Patches']:
-                    print("Checking for patch for {} located at {}".format(setup['Name'], patch))
-                    if not os.path.exists(patch):
-                        missing_patches.append({"InstallerName": setup['Name'],"PatchPath": patch})
+                if 'Patches' in setup:    
+                    for patch in setup['Patches']:
+                        print("Checking for patch for {} located at {}".format(setup['Name'], patch))
+                        if not os.path.exists(patch):
+                            missing_patches.append({"InstallerName": setup['Name'],"PatchPath": patch})
+                if 'Volumes' in setup:
+                    for volume in setup['Volumes']:
+                        print("Checking for volume for {} located at {}".format(setup['Name'], volume))
+                        if not os.path.exists(volume):
+                            missing_volumes.append({"InstallerName": setup['Name'],"VolumePath": volume})
+            
     if missing_setups or missing_patches:
         if missing_setups:
             print("Missing {} setups: {} ".format(len(missing_setups), missing_setups))
+        if missing_volumes:
+            print("Missing {} volumes: {} ".format(len(missing_volumes), missing_volumes))
         if missing_patches:
             print("Missing {} patches: {} ".format(len(missing_patches), missing_setups))
         return False
@@ -88,10 +98,22 @@ def _main(args):
                 print("Uploading {} to AFS ".format(installer['SourcePath']))
                 file_service.create_file_from_path(args.afs_name, None, installer['RemotePath'], installer['SourcePath'])
                 if installer['IsMsi'] is False:
-                    for patch in installer['Patches']:
-                        patch_file_name = os.path.basename(patch)
-                        print("Uploading {} to AFS ".format(patch_file_name))
-                        file_service.create_file_from_path(args.afs_name, None, patch_file_name, patch)
+                    if 'Volumes' in installer:
+                        for volume in installer['Volumes']:
+                            volume_file_name = os.path.basename(volume)
+                            print("Uploading {} to AFS ".format(volume_file_name))
+                            file_service.create_file_from_path(args.afs_name, None, volume_file_name, volume)
+                    if 'AdditionalFiles' in installer:
+                        for file in installer['AdditionalFiles']:
+                            if os.path.exists(file):
+                                add_file_name = os.path.basename(file)
+                                print("Uploading {} to AFS ".format(add_file_name))
+                                file_service.create_file_from_path(args.afs_name, None, add_file_name, file)
+                    if 'Patches' in installer:
+                        for patch in installer['Patches']:
+                            patch_file_name = os.path.basename(patch)
+                            print("Uploading {} to AFS ".format(patch_file_name))
+                            file_service.create_file_from_path(args.afs_name, None, patch_file_name, patch)
                 #archive_command = r'"{}" cp {} {}'.format(args.azcopy_path, installer['SourcePath'], args.afs_sas_uri)
                 #print(archive_command)
                 #subprocess.call(archive_command, shell=True)
