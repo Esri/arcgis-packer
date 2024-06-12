@@ -108,10 +108,21 @@
     "provisioners": [
         {
             "type": "powershell",
+            "script":"{{template_dir}}\\UninstallDotnet.ps1"
+        },
+        {
+            "type": "powershell",
             "only": [
                 "pro-image-builder"
             ],
             "script": "{{template_dir}}\\InstallDotnet8.ps1"
+        },
+        {
+            "type": "powershell",
+            "only": [
+                "pro-image-builder"
+            ],
+            "script": "{{template_dir}}\\InstallEdgeWebView2.ps1"
         },
         {
             "type": "file",
