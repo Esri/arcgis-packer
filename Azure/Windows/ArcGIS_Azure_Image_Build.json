@@ -11,7 +11,7 @@
         
         "Azure_ImageName": "",
         "Azure_ImageVersion": "",
-        "Azure_ImageReplicationRegion": "eastus",
+        "Azure_ImageReplicationRegion": "eastus,westus,westeurope,westus2",
 
         "Install_Config_Source_File_Path": "",
         "Install_Config_Destination_File_Path": "C:\\ArcGIS\\Deployment\\InstallConfiguration.json",
@@ -40,9 +40,9 @@
             "managed_image_name": "{{user `Azure_ImageName`}}_{{user `Azure_ImageVersion`}}",
 
             "os_type": "Windows",
-            "image_publisher": "MicrosoftWindowsServer",
-            "image_offer": "WindowsServer",
-            "image_sku": "2022-datacenter-g2",
+            "image_publisher": "MicrosoftWindowsDesktop",
+            "image_offer": "Windows-11",
+            "image_sku": "win11-23h2-avd",
             "image_version": "latest",
             "communicator": "winrm",
             "winrm_use_ssl": true,
@@ -53,7 +53,7 @@
             
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
-            "vm_size": "Standard_DS2_v2",
+            "vm_size": "Standard_F8s_v2",
             "os_disk_size_gb": 128,
 
             "shared_image_gallery_destination": {
@@ -77,7 +77,8 @@
 
             "managed_image_resource_group_name": "{{user `Azure_ResourceGroupName`}}",
             "managed_image_name": "{{user `Azure_ImageName`}}_{{user `Azure_ImageVersion`}}",
-            
+            "managed_image_storage_account_type": "Premium_LRS",
+
             "os_type": "Windows",
             "image_publisher": "MicrosoftWindowsServer",
             "image_offer": "WindowsServer",
@@ -92,7 +93,7 @@
 
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
-            "vm_size": "Standard_DS2_v2",
+            "vm_size": "Standard_D16s_v5",
             "os_disk_size_gb": 128,
 
             "shared_image_gallery_destination": {

@@ -72,7 +72,7 @@ finally {
     }
 }
 
-Del $FilePath
+Remove-Item $FilePath -Force
 
 Remove-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows Azure\ScriptHandler' -Name 'MreSeqNumStarted' -ErrorAction Ignore
 Remove-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows Azure\ScriptHandler' -Name 'MreSeqNumFinished' -ErrorAction Ignore
