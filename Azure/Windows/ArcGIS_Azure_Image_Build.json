@@ -24,7 +24,11 @@
         "Azure_ArtifactsStorageFileShareName": "",
         "Azure_ArtifactsStorageFileShareEnpointSuffix": "core.windows.net",
         
-        "Azure_BuildVMName": "arcgisbuildvm"
+        "Azure_BuildVMName": "arcgisbuildvm",
+
+        "Installed_Components": "",
+        "Installed_Components_2": "",
+        "Missing_Components": ""
     },
     "builders": [
         {
@@ -63,8 +67,58 @@
                 "image_name": "{{user `Azure_ImageName`}}",
                 "image_version": "{{user `Azure_ImageVersion`}}",
                 "replication_regions": "{{user `Azure_ImageReplicationRegion`}}"
+            },
+            "shared_image_gallery_timeout": "3h",
+            "azure_tags": {
+                "Installed_Components": "{{user `Installed_Components`}}",
+                "Installed_Components_2": "{{user `Installed_Components_2`}}",
+                "Missing_Components": "{{user `Missing_Components`}}"
             }
 
+        },
+        {
+            "name": "mpc-image-builder",
+            "type": "azure-arm",
+
+            "client_id": "{{user `Azure_ClientId`}}",
+            "client_secret": "{{user `Azure_ClientSecret`}}",
+            "tenant_id": "{{user `Azure_TenantId`}}",
+            "subscription_id": "{{user `Azure_SubscriptionId`}}",
+
+            "managed_image_resource_group_name": "{{user `Azure_ResourceGroupName`}}",
+            "managed_image_name": "{{user `Azure_ImageName`}}_{{user `Azure_ImageVersion`}}",
+
+            "os_type": "Windows",
+            "image_publisher": "MicrosoftWindowsDesktop",
+            "image_offer": "Windows-11",
+            "image_sku": "win11-23h2-avd",
+            "image_version": "latest",
+            "communicator": "winrm",
+            "winrm_use_ssl": true,
+            "winrm_insecure": true,
+            "winrm_timeout": "30m",
+            "winrm_username": "packer",
+            "winrm_password": "ArcGIS2022#",
+            
+            "location": "{{user `Azure_Location`}}",
+            "temp_compute_name": "{{user `Azure_BuildVMName`}}",
+            "vm_size": "Standard_F8s_v2",
+            "os_disk_size_gb": 256,
+
+            "shared_image_gallery_destination": {
+                "subscription": "{{user `Azure_SubscriptionId`}}",
+                "resource_group": "{{user `Azure_ResourceGroupName`}}",
+                "gallery_name": "{{user `Azure_ComputeGalleryName`}}",
+                "image_name": "{{user `Azure_ImageName`}}",
+                "image_version": "{{user `Azure_ImageVersion`}}",
+                "replication_regions": "{{user `Azure_ImageReplicationRegion`}}"
+            },
+            "shared_image_gallery_timeout": "3h",
+            "azure_tags": {
+                "Installed_Components": "{{user `Installed_Components`}}",
+                "Installed_Components_2": "{{user `Installed_Components_2`}}",
+                "Missing_Components": "{{user `Missing_Components`}}"
+            }
         },
         {
             "name": "enterprise-image-builder",
@@ -89,7 +143,7 @@
             "winrm_insecure": true,
             "winrm_timeout": "12h",
             "winrm_username": "packer",
-            "winrm_password": "ArcGIS2024#",
+            "winrm_password": "ArcGIS2022#",
 
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
@@ -103,6 +157,12 @@
                 "image_name": "{{user `Azure_ImageName`}}",
                 "image_version": "{{user `Azure_ImageVersion`}}",
                 "replication_regions": "{{user `Azure_ImageReplicationRegion`}}"
+            },
+            "shared_image_gallery_timeout": "3h",
+            "azure_tags": {
+                "Installed_Components": "{{user `Installed_Components`}}",
+                "Installed_Components_2": "{{user `Installed_Components_2`}}",
+                "Missing_Components": "{{user `Missing_Components`}}"
             }
         }
     ],
@@ -114,14 +174,16 @@
         {
             "type": "powershell",
             "only": [
-                "pro-image-builder"
+                "pro-image-builder",
+                "mpc-image-builder"
             ],
             "script": "{{template_dir}}\\InstallDotnet8.ps1"
         },
         {
             "type": "powershell",
             "only": [
-                "pro-image-builder"
+                "pro-image-builder",
+                "mpc-image-builder"
             ],
             "script": "{{template_dir}}\\InstallEdgeWebView2.ps1"
         },
@@ -134,6 +196,21 @@
             "type": "file",
             "source": "{{user `ArcGIS_Module_Zip_Source_File_Path`}}",
             "destination": "{{user `ArcGIS_Module_Zip_Destination_Path`}}"
+        },
+        {
+            "type": "file",
+            "only": [
+                "mpc-image-builder"
+            ],
+            "source": "{{template_dir}}\\..\\arcgismpc\\PackerBuildArtifacts\\MPCArtifacts",
+            "destination": "C:\\ArcGIS\\Deployment"
+        },
+        {
+            "type": "powershell",
+            "only": [
+                "mpc-image-builder"
+            ],
+            "script": "{{template_dir}}\\..\\arcgismpc\\PackerBuildArtifacts\\ConfigureMPC.ps1"
         },
         {
             "type": "powershell",
