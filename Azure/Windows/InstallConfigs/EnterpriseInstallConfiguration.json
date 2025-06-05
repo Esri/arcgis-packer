@@ -11,8 +11,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Server",
       "Arguments": "/qn INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Server\" INSTALLDIR1=$env:SystemDrive\\Python27 ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "C5CF7CE9-7501-4ECC-9C48-A7DD5A259AE2",
-      "Version": "11.4",
+      "ProductId": "BBFCF183-6CB3-409F-A855-21D48C5F079B",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": [
@@ -26,8 +26,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Portal",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Portal\" CONTENTDIR=$env:SystemDrive\\portalforarcgis\\content ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "CFB543E4-7FB7-4F9D-BD1F-483347B142DF",
-      "Version": "11.4",
+      "ProductId": "366A0EAF-7974-4EA3-9A43-74D76FB77C47",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": [
@@ -41,8 +41,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebStyles",
       "Arguments": "/qb ",
       "IsMsi": false,
-      "ProductId": "2C941605-135F-4501-AD91-21ECA70977ED",
-      "Version": "11.4",
+      "ProductId": "58668668-FCF9-400D-B3DF-24A3E0417C00",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -54,8 +54,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\DataStore",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\DataStore\" ACCEPTEULA=YES ADDLOCAL=ALL",
       "IsMsi": false,
-      "ProductId": "4AC2C588-DFDC-449E-8DFF-3701C3C3824A",
-      "Version": "11.4",
+      "ProductId": "622B3833-6239-4857-96D5-4294D1E85F94",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -66,9 +66,10 @@
       "RemotePath": "GeoEvent.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\GeoEvent",
       "Arguments": "/qb ACCEPTEULA=YES",
+      "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "4CEDE889-6698-4083-B221-7499B7A32D39",
-      "Version": "11.4",
+      "ProductId": "C8BA52B6-38E6-484E-BEC6-61A28EBC6CB8",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -79,9 +80,10 @@
       "RemotePath": "NotebookServer.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\NotebookServer",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\NotebookServer\" ACCEPTEULA=YES",
+      "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "A853CA10-4978-4882-8629-571FBA02618D",
-      "Version": "11.4",
+      "ProductId": "C9AB6062-B63C-4745-AB1F-2532D594379F",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -92,9 +94,10 @@
       "RemotePath": "MissionServer.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\MissionServer",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Mission\" ACCEPTEULA=YES",
+      "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "3338445A-81E9-421C-A331-BA1BFBE8A8DE",
-      "Version": "11.4",
+      "ProductId": "F0FEE17E-2CB7-4C42-B091-5E8AC7945666",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -105,9 +108,10 @@
       "RemotePath": "WorkflowManagerServer.exe",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WorkflowManagerServer",
       "Arguments": "/qb ACCEPTEULA=YES",
+      "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "455C44DE-39C6-4D9F-BC13-48F7626492E8",
-      "Version": "11.4",
+      "ProductId": "A5C18498-DEF3-44DD-8DE6-8E6C1653CC66",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -120,11 +124,11 @@
       "Arguments": "",
       "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "",
-      "Version": "11.4",
+      "ProductId": "B87FD5D1-7ED0-424B-8A79-CE4B231CF085",
+      "Version": "11.5",
       "Patches": [],
       "AdditionalFiles": [
-        "C:\\Setups\\dotnet-hosting-8.0.10-win.exe",
+        "C:\\Setups\\dotnet-hosting-8.0.15-win.exe",
         "C:\\Setups\\WebDeploy_amd64_en-US.msi"
       ],
       "Volumes": []
@@ -140,12 +144,12 @@
     },
     {
       "Name": "Microsoft ODBC Driver 18 for SQL Server",
-      "SourcePath": "C:\\Setups\\msodbcsql_18.4.1.1_x64.msi",
-      "RemotePath": "msodbcsql_18.4.1.1_x64.msi",
+      "SourcePath": "C:\\Setups\\msodbcsql_18.5.1.1_x64.msi",
+      "RemotePath": "msodbcsql_18.5.1.1_x64.msi",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient",
       "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
       "IsMsi": true,
-      "ProductId": "566C6178-4AE9-40FF-A84F-4A021FF39816"
+      "ProductId": "75644F21-B236-485D-9145-FC70D43AD447"
     },
     {
       "Name": "Microsoft SQL Command Line Utility 15.0.4298.1",

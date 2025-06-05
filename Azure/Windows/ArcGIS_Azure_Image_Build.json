@@ -24,7 +24,11 @@
         "Azure_ArtifactsStorageFileShareName": "",
         "Azure_ArtifactsStorageFileShareEnpointSuffix": "core.windows.net",
         
-        "Azure_BuildVMName": "arcgisbuildvm"
+        "Azure_BuildVMName": "arcgisbuildvm",
+
+        "Installed_Components": "",
+        "Installed_Components_2": "",
+        "Missing_Components": ""
     },
     "builders": [
         {
@@ -49,12 +53,13 @@
             "winrm_insecure": true,
             "winrm_timeout": "12h",
             "winrm_username": "packer",
-            "winrm_password": "ArcGIS2022#",
+            "winrm_password": "ArcGIS2025#",
             
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
             "vm_size": "Standard_F8s_v2",
             "os_disk_size_gb": 128,
+            "public_ip_sku": "Standard",
 
             "shared_image_gallery_destination": {
                 "subscription": "{{user `Azure_SubscriptionId`}}",
@@ -63,6 +68,12 @@
                 "image_name": "{{user `Azure_ImageName`}}",
                 "image_version": "{{user `Azure_ImageVersion`}}",
                 "replication_regions": "{{user `Azure_ImageReplicationRegion`}}"
+            },
+            "shared_image_gallery_timeout": "3h",
+            "azure_tags": {
+                "Installed_Components": "{{user `Installed_Components`}}",
+                "Installed_Components_2": "{{user `Installed_Components_2`}}",
+                "Missing_Components": "{{user `Missing_Components`}}"
             }
 
         },
@@ -89,12 +100,13 @@
             "winrm_insecure": true,
             "winrm_timeout": "12h",
             "winrm_username": "packer",
-            "winrm_password": "ArcGIS2024#",
+            "winrm_password": "ArcGIS2025#",
 
             "location": "{{user `Azure_Location`}}",
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
             "vm_size": "Standard_D16s_v5",
             "os_disk_size_gb": 128,
+            "public_ip_sku": "Standard",
 
             "shared_image_gallery_destination": {
                 "subscription": "{{user `Azure_SubscriptionId`}}",
@@ -103,6 +115,12 @@
                 "image_name": "{{user `Azure_ImageName`}}",
                 "image_version": "{{user `Azure_ImageVersion`}}",
                 "replication_regions": "{{user `Azure_ImageReplicationRegion`}}"
+            },
+            "shared_image_gallery_timeout": "3h",
+            "azure_tags": {
+                "Installed_Components": "{{user `Installed_Components`}}",
+                "Installed_Components_2": "{{user `Installed_Components_2`}}",
+                "Missing_Components": "{{user `Missing_Components`}}"
             }
         }
     ],
