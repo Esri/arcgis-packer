@@ -59,6 +59,7 @@
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
             "vm_size": "Standard_F8s_v2",
             "os_disk_size_gb": 128,
+            "public_ip_sku": "Standard",
 
             "shared_image_gallery_destination": {
                 "subscription": "{{user `Azure_SubscriptionId`}}",
@@ -149,6 +150,7 @@
             "temp_compute_name": "{{user `Azure_BuildVMName`}}",
             "vm_size": "Standard_D16s_v5",
             "os_disk_size_gb": 128,
+            "public_ip_sku": "Standard",
 
             "shared_image_gallery_destination": {
                 "subscription": "{{user `Azure_SubscriptionId`}}",
