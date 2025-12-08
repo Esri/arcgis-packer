@@ -24,7 +24,7 @@
 $ErrorActionPreference = 'Stop'
 try{
 
-    $url = "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/1b33f4e1-227e-4265-b9e9-3751aeeb2efe/MicrosoftEdgeWebview2Setup.exe"
+    $url = "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/f2910a1e-e5a6-4f17-b52d-7faf525d17f8/MicrosoftEdgeWebview2Setup.exe"
     $path = "$psscriptroot\MicrosoftEdgeWebview2Setup.exe"
     if(!(test-path $path)) {
         "Downloading [$url]`nSaving at [$path]" 

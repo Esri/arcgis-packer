@@ -23,8 +23,8 @@
 
 $ErrorActionPreference = 'Stop'
 try{
-    $url = "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/8.0.15/windowsdesktop-runtime-8.0.15-win-x64.exe"
-    $path = "$psscriptroot\windowsdesktop-runtime-8.0.15-win-x64.exe"
+    $url = "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/8.0.21/windowsdesktop-runtime-8.0.21-win-x64.exe"
+    $path = "$psscriptroot\windowsdesktop-runtime-8.0.21-win-x64.exe"
     if(!(test-path $path)) {
         "Downloading [$url]`nSaving at [$path]" 
         (new-object net.webClient).DownloadFile($url, $path) 

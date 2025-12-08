@@ -1,8 +1,5 @@
 {
-  "WindowsFeatures": [
-    "Web-Server",
-    "Web-Mgmt-Console"
-  ],
+  "WindowsFeatures": [],
   "Installers": [
     {
       "Name": "ArcGIS for Server",
@@ -11,8 +8,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Server",
       "Arguments": "/qn INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Server\" INSTALLDIR1=$env:SystemDrive\\Python27 ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "BBFCF183-6CB3-409F-A855-21D48C5F079B",
-      "Version": "11.5",
+      "ProductId": "97DB2F11-2C92-41DF-9C6D-F71648CD2AC9",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": [
@@ -26,8 +23,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\Portal",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Portal\" CONTENTDIR=$env:SystemDrive\\portalforarcgis\\content ACCEPTEULA=YES",
       "IsMsi": false,
-      "ProductId": "366A0EAF-7974-4EA3-9A43-74D76FB77C47",
-      "Version": "11.5",
+      "ProductId": "C898DDF9-D6BE-45DF-9A10-3263660BB39F",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": [
@@ -41,8 +38,8 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\WebStyles",
       "Arguments": "/qb ",
       "IsMsi": false,
-      "ProductId": "58668668-FCF9-400D-B3DF-24A3E0417C00",
-      "Version": "11.5",
+      "ProductId": "A31A5861-3957-46E3-9166-56D297C0309E",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -54,11 +51,13 @@
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\DataStore",
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\DataStore\" ACCEPTEULA=YES ADDLOCAL=ALL",
       "IsMsi": false,
-      "ProductId": "622B3833-6239-4857-96D5-4294D1E85F94",
-      "Version": "11.5",
+      "ProductId": "E62C9D19-53FE-45C2-B9C5-C86C7C703B8F",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
-      "Volumes": []
+      "Volumes": [
+        "C:\\Setups\\DataStore.exe.001"
+      ]
     },
     {
       "Name": "GeoEvent",
@@ -68,8 +67,8 @@
       "Arguments": "/qb ACCEPTEULA=YES",
       "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "C8BA52B6-38E6-484E-BEC6-61A28EBC6CB8",
-      "Version": "11.5",
+      "ProductId": "92BEF07A-3250-4276-BCDE-1D66F26160CE",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -82,8 +81,8 @@
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\NotebookServer\" ACCEPTEULA=YES",
       "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "C9AB6062-B63C-4745-AB1F-2532D594379F",
-      "Version": "11.5",
+      "ProductId": "",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -96,8 +95,8 @@
       "Arguments": "/qb INSTALLDIR=\"$env:SystemDrive\\ArcGIS\\Mission\" ACCEPTEULA=YES",
       "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "F0FEE17E-2CB7-4C42-B091-5E8AC7945666",
-      "Version": "11.5",
+      "ProductId": "16AF7BDF-E692-4490-A3F6-1F41812CF155",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -110,8 +109,8 @@
       "Arguments": "/qb ACCEPTEULA=YES",
       "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "A5C18498-DEF3-44DD-8DE6-8E6C1653CC66",
-      "Version": "11.5",
+      "ProductId": "3E93DBCD-2ECB-4E88-BD1E-3456D5FAD070",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [],
       "Volumes": []
@@ -124,11 +123,11 @@
       "Arguments": "",
       "SkipInstall": true,
       "IsMsi": false,
-      "ProductId": "B87FD5D1-7ED0-424B-8A79-CE4B231CF085",
-      "Version": "11.5",
+      "ProductId": "BB194DE8-F519-4660-837F-B6AAA3650DEB",
+      "Version": "12.0",
       "Patches": [],
       "AdditionalFiles": [
-        "C:\\Setups\\dotnet-hosting-8.0.15-win.exe",
+        "C:\\Setups\\dotnet-hosting-8.0.21-win.exe",
         "C:\\Setups\\WebDeploy_amd64_en-US.msi"
       ],
       "Volumes": []
@@ -144,12 +143,12 @@
     },
     {
       "Name": "Microsoft ODBC Driver 18 for SQL Server",
-      "SourcePath": "C:\\Setups\\msodbcsql_18.5.1.1_x64.msi",
-      "RemotePath": "msodbcsql_18.5.1.1_x64.msi",
+      "SourcePath": "C:\\Setups\\msodbcsql_18.5.2.1_x64.msi",
+      "RemotePath": "msodbcsql_18.5.2.1_x64.msi",
       "LocalPath": "$env:SystemDrive\\ArcGIS\\Deployment\\Downloads\\SQLNativeClient",
       "Arguments": "/quiet /qn IACCEPTMSODBCSQLLICENSETERMS=YES ADDLOCAL=ALL",
       "IsMsi": true,
-      "ProductId": "75644F21-B236-485D-9145-FC70D43AD447"
+      "ProductId": "55422B70-0DE4-4793-8872-A44B58683F33"
     },
     {
       "Name": "Microsoft SQL Command Line Utility 15.0.4298.1",
