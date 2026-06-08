@@ -134,7 +134,7 @@
             "only": [
                 "pro-image-builder"
             ],
-            "script": "{{template_dir}}\\InstallDotnet8.ps1"
+            "script": "{{template_dir}}\\InstallDotnet10.ps1"
         },
         {
             "type": "powershell",

@@ -1,6 +1,6 @@
 <#
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
 
@@ -23,14 +23,15 @@
 
 $ErrorActionPreference = 'Stop'
 try{
-    $url = "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/8.0.21/windowsdesktop-runtime-8.0.21-win-x64.exe"
-    $path = "$psscriptroot\windowsdesktop-runtime-8.0.21-win-x64.exe"
+    $url = "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/10.0.7/windowsdesktop-runtime-10.0.7-win-x64.exe"
+    $path = "$psscriptroot\windowsdesktop-runtime-10.0.4-win-x64.exe"
     if(!(test-path $path)) {
         "Downloading [$url]`nSaving at [$path]" 
         (new-object net.webClient).DownloadFile($url, $path) 
     }
 
     Invoke-Command -ScriptBlock { Start-Process -FilePath $path -ArgumentList "/install /quiet /norestart" -Wait -PassThru }
+
 }catch{
     write-host $_
     if(Test-Path $path){
