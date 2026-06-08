@@ -1,6 +1,6 @@
 <#
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
 
